@@ -13,9 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer _renderer;
 
-//    public bool isWalking = false;
-//    public bool isRunning = false;
-
+    public float hittingTime;
     // Use this for initialization
     void Start()
     {
@@ -25,26 +23,25 @@ public class PlayerMovement : MonoBehaviour
         speed = WalkSpeed;
     }
 
-
-
     private void FixedUpdate()
     {
         rbody.velocity = movementDirection;
     }
 
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            animator.SetTrigger("Die");
+            animator.SetTrigger("isDying");
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("isHitting");
             movementDirection = Vector2.zero;
         }
         else
-            Move();
+            animator.ResetTrigger("isHitting");
+        Move();
+        
     }
 
     private void Move()
