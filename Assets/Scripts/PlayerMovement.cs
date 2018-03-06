@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             movementDirection = Vector2.zero;
         }
         else
-            animator.ResetTrigger("isHitting");
+            
         Move();
         
     }
@@ -63,19 +63,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 speed = RunSpeed;
                 animator.SetBool("isRunning", true);
-         
             }
             else
             {
-              
-                animator.SetBool("isRunning", false);
                 speed = WalkSpeed;
-             
+                animator.SetBool("isRunning", false);
+
             }
-        }else
-        {
+        }   else {
             animator.SetBool("isRunning", false);
             animator.SetBool("isWalking", false);
+            animator.ResetTrigger("isHitting");
         }
         movementDirection = dir.normalized * speed;
     }
