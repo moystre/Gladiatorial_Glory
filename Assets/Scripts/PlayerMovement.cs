@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer _renderer;
 
-    public float hittingTime;
     // Use this for initialization
     void Start()
     {
