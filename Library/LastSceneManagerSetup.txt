@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Scene_0_Oosh_Menu.unity
+- path: Assets/Scenes/Scene_1_Game.unity
   isLoaded: 1
   isActive: 1
