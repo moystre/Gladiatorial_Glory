@@ -36,19 +36,16 @@ public class PlayerMovement : NetworkBehaviour
             return;
         }
         
-
             if (Input.GetKeyDown(KeyCode.Q))
-                animator.SetTrigger("isDying");
+            animator.SetTrigger("isDying");
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("isHitting");
                 movementDirection = Vector2.zero;
             }
             else
-
-                Move();
-        
-    }
+                   Move();
+            }
 
     private void Move()
     {
@@ -74,13 +71,18 @@ public class PlayerMovement : NetworkBehaviour
             {
                 speed = WalkSpeed;
                 animator.SetBool("isRunning", false);
-
-            }
+                            }
         }   else {
             animator.SetBool("isRunning", false);
             animator.SetBool("isWalking", false);
             animator.ResetTrigger("isHitting");
         }
         movementDirection = dir.normalized * speed;
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
+        //GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 }
