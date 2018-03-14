@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_0_Oosh_Menu.unity
     guid: 5849da4402dbfad4da66a2eb98d3cb15
   - enabled: 1

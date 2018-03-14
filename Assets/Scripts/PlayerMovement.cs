@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public float WalkSpeed = 1f;
     public float RunSpeed = 2f;
@@ -30,16 +31,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            animator.SetTrigger("isDying");
-        else if (Input.GetKeyDown(KeyCode.Space))
+        if (!isLocalPlayer)
         {
-            animator.SetTrigger("isHitting");
-            movementDirection = Vector2.zero;
+            return;
         }
-        else
-            
-        Move();
+        
+
+            if (Input.GetKeyDown(KeyCode.Q))
+                animator.SetTrigger("isDying");
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetTrigger("isHitting");
+                movementDirection = Vector2.zero;
+            }
+            else
+
+                Move();
         
     }
 
