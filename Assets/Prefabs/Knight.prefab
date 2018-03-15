@@ -9,22 +9,37 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1320207802621606}
+  m_RootGameObject: {fileID: 1817627798008608}
   m_IsPrefabParent: 1
---- !u!1 &1320207802621606
+--- !u!1 &1030397167649376
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4727920439993872}
-  - component: {fileID: 50890709863021306}
-  - component: {fileID: 212647213898800808}
-  - component: {fileID: 95766703853449104}
-  - component: {fileID: 114884028401128456}
-  - component: {fileID: 114641772543613176}
-  - component: {fileID: 114111760030550150}
+  - component: {fileID: 4222816160719844}
+  m_Layer: 0
+  m_Name: Stone Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1817627798008608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4080229250105612}
+  - component: {fileID: 50428259130363144}
+  - component: {fileID: 212077158341517184}
+  - component: {fileID: 95504984357224182}
+  - component: {fileID: 114857191557428190}
+  - component: {fileID: 114086766972113290}
+  - component: {fileID: 114567975755002528}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -32,26 +47,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4727920439993872
+--- !u!4 &4080229250105612
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.9, y: 11.38, z: 1.22}
+  m_LocalPosition: {x: 13, y: 11, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 4222816160719844}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50890709863021306
+--- !u!4 &4222816160719844
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030397167649376}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.9, y: 11.38, z: 1.22}
+  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4080229250105612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50428259130363144
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -65,13 +94,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &95766703853449104
+--- !u!95 &95504984357224182
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 640ebfe3c1564ad418363200de92fda2, type: 2}
@@ -82,33 +111,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114111760030550150
+--- !u!114 &114086766972113290
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 3
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114641772543613176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -135,12 +143,33 @@ MonoBehaviour:
     i15: 46
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114884028401128456
+--- !u!114 &114567975755002528
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114857191557428190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817627798008608}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4404be7cfdcef2f4badd58faf8888d55, type: 3}
@@ -148,12 +177,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 2
   RunSpeed: 5
---- !u!212 &212647213898800808
+  stonePrefab: {fileID: 1188943914690356, guid: d6dafed0a82ce0d499c85dddca1386f3,
+    type: 2}
+  stoneSpawn: {fileID: 4222816160719844}
+--- !u!212 &212077158341517184
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320207802621606}
+  m_GameObject: {fileID: 1817627798008608}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

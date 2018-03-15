@@ -7,6 +7,8 @@ public class PlayerMovement : NetworkBehaviour
 {
     public float WalkSpeed = 1f;
     public float RunSpeed = 2f;
+    public GameObject stonePrefab;
+    public Transform stoneSpawn;
 
     private float speed = 0f;
     private Vector2 movementDirection;
@@ -41,6 +43,7 @@ public class PlayerMovement : NetworkBehaviour
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("isHitting");
+                ThrowStone();
                 movementDirection = Vector2.zero;
             }
             else
@@ -84,5 +87,20 @@ public class PlayerMovement : NetworkBehaviour
     {
         GameObject.Find("CM vcam1").GetComponent<Cinemachine.CinemachineVirtualCamera>().Follow = transform;
         //GetComponent<MeshRenderer>().material.color = Color.blue;
+    }
+
+    void ThrowStone()
+    {
+        // Create the Stone from the Stone Prefab
+        var stone = (GameObject)Instantiate(
+            stonePrefab,
+            stoneSpawn.position,
+            stoneSpawn.rotation);
+
+        // Add velocity to the stone
+        stone.GetComponent<Rigidbody>().velocity = stone.transform.right * 6;
+
+        // Destroy the stone after 2 seconds
+        Destroy(stone, 2.0f);
     }
 }
